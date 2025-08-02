@@ -2,20 +2,20 @@ import os
 import gradio as gr
 import faiss
 import numpy as np
-from transformers import pipeline
-from sentence_transformers import SentenceTransformer
 from PyPDF2 import PdfReader
 from docx import Document
+from sentence_transformers import SentenceTransformer
+from transformers import pipeline
 
 # ======================
-# CONFIGURACIÓN Y MODELOS
+# CONFIGURACIÓN DE MODELOS
 # ======================
 
 modelo_embeddings = SentenceTransformer("all-MiniLM-L6-v2")
 modelo_qa = pipeline("question-answering", model="distilbert-base-cased-distilled-squad")
 
 # ======================
-# CARGAR DOCUMENTOS DESDE ARCHIVOS SUBIDOS
+# FUNCIÓN: CARGAR DOCUMENTOS
 # ======================
 
 def cargar_documentos_desde_archivos(archivos):
@@ -59,31 +59,27 @@ def responder(pregunta, index, textos):
     return respuesta["answer"]
 
 # ======================
-# INTERFAZ GRADIO CON SUBIDA DE ARCHIVOS
+# INTERFAZ GRADIO
 # ======================
 
 def crear_chatbot_con_documentos(archivos, pregunta):
     if not archivos:
-        return "Por favor, sube al menos un documento PDF o DOCX primero."
-
+        return "Por favor, sube al menos un documento PDF o DOCX."
     textos = cargar_documentos_desde_archivos(archivos)
     embeddings = generar_embeddings(textos)
-    index = construir_faiss(embeddings)
-    respuesta = responder(pregunta, index, textos)
-    return respuesta
+    index = construir_faiss(np.array(embeddings))
+    return responder(pregunta, index, textos)
 
 with gr.Blocks() as demo:
-    gr.Markdown("## 🤖 Chatbot de Empresa con carga de documentos")
-    
-    archivos_subidos = gr.File(label="Sube documentos PDF o DOCX", file_types=['.pdf', '.docx'], file_count="multiple")
-    pregunta_input = gr.Textbox(label="Haz una pregunta sobre los documentos")
-    boton_preguntar = gr.Button("Preguntar")
+    gr.Markdown("## 🤖 Chatbot de Empresa con documentos PDF/DOCX")
+    archivos_subidos = gr.File(label="Sube documentos", file_types=[".pdf", ".docx"], file_count="multiple")
+    entrada_pregunta = gr.Textbox(label="Haz una pregunta")
+    boton = gr.Button("Preguntar")
     salida = gr.Textbox(label="Respuesta")
 
-    def manejar_pregunta(archivos, pregunta):
-        return crear_chatbot_con_documentos(archivos, pregunta)
-
-    boton_preguntar.click(fn=manejar_pregunta, inputs=[archivos_subidos, pregunta_input], outputs=salida)
+    boton.click(fn=crear_chatbot_con_documentos,
+                inputs=[archivos_subidos, entrada_pregunta],
+                outputs=salida)
 
 if __name__ == "__main__":
     demo.launch()
