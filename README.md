@@ -40,12 +40,6 @@ python-docx para extracción de texto en DOCX
 
 ## 🚀 Uso
 
-Clona el repositorio:
-
-git clone https://github.com/Kevin-2099/chatbot-docs-ia.git
-cd chatbot-docs-ia
-
-
 Instala dependencias:
 
 pip install -r requirements.txt
