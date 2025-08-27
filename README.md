@@ -1,46 +1,69 @@
-# Chatbot Docs AI 🏆
-Chatbot inteligente basado en IA para responder preguntas sobre documentos PDF y DOCX. Permite subir archivos directamente a través de la interfaz web y utiliza modelos de lenguaje avanzados para extraer información relevante y responder de forma precisa.
+# Chatbot de Documentos Empresariales con IA 🤖📂
 
-## Características principales
-Subida de documentos PDF y DOCX desde la interfaz.
+Asistente inteligente basado en IA que responde preguntas sobre documentos cargados (PDF, DOCX, TXT, MD, CSV). Permite subir múltiples archivos, procesarlos y realizar consultas con respuestas contextuales, resaltando la información relevante directamente en el texto.
 
-Extracción y procesamiento de texto para múltiples documentos.
+## ✨ Características principales
 
-Embeddings semánticos con SentenceTransformers para representar el contenido.
+📑 Soporte para múltiples formatos: PDF, DOCX, TXT, Markdown (.md) y CSV.
 
-Búsqueda rápida con FAISS para encontrar el fragmento más relevante.
+📂 Carga de múltiples documentos en una sola sesión.
 
-Respuesta contextualizada con modelos de Preguntas y Respuestas de Hugging Face.
+🧹 Limpieza y fragmentación automática del texto con solapamiento para mejorar contexto.
 
-Interfaz web sencilla y accesible con Gradio.
+🧠 Embeddings semánticos con SentenceTransformers (all-MiniLM-L6-v2).
 
-## Tecnologías usadas
+⚡ Búsqueda rápida y precisa con FAISS.
+
+🎯 Respuestas contextuales con modelo DistilBERT QA de Hugging Face.
+
+🔍 Resaltado automático de la parte del documento usada para responder.
+
+💬 Interfaz de chat con historial, que guarda la conversación completa.
+
+🌐 Interfaz web accesible con Gradio.
+
+## 🛠️ Tecnologías usadas
+
 Python 3.x
 
-Gradio
+Gradio (interfaz de usuario)
 
-SentenceTransformers
+SentenceTransformers (embeddings semánticos)
 
-FAISS
+FAISS (búsqueda vectorial eficiente)
 
-Transformers (Hugging Face)
+Transformers (Hugging Face) para Question Answering
 
-PyPDF2 para extracción de texto en PDFs
+PyPDF2 para extracción de texto en PDF
 
 python-docx para extracción de texto en DOCX
 
-## Uso
-Clona el repositorio.
+## 🚀 Uso
 
-Instala dependencias (ver requirements.txt).
+Clona el repositorio:
 
-Ejecuta app.py.
+git clone https://github.com/Kevin-2099/chatbot-docs-ia.git
+cd chatbot-docs-ia
 
-Accede a la interfaz web para subir documentos y hacer preguntas.
 
-## Ideal para
-Empresas que quieren centralizar y consultar documentos internos fácilmente.
+Instala dependencias:
 
-Investigadores que trabajan con múltiples documentos y necesitan consultas rápidas.
+pip install -r requirements.txt
 
-Cualquier proyecto que requiera un asistente inteligente para documentos.
+
+Ejecuta la aplicación:
+
+python app.py
+
+
+Abre la interfaz web de Gradio en tu navegador.
+
+Sube tus documentos (PDF, DOCX, TXT, MD o CSV) y comienza a hacer preguntas.
+
+## 🎯 Ideal para
+
+Empresas que quieren consultar documentos internos de manera centralizada.
+
+Investigadores y estudiantes que trabajan con múltiples documentos y necesitan encontrar información puntual.
+
+Proyectos empresariales que requieren un asistente inteligente y privado para documentos sensibles.
