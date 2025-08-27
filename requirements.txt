@@ -2,5 +2,7 @@ gradio
 faiss-cpu
 sentence-transformers
 transformers
+torch
 PyPDF2
 python-docx
+numpy
