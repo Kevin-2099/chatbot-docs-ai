@@ -1,42 +1,49 @@
 # Chatbot de Documentos Empresariales con IA 🤖📂
+Asistente inteligente basado en IA que responde preguntas sobre documentos cargados (PDF, DOCX, TXT, MD, CSV, PPTX, ODT).
 
-Asistente inteligente basado en IA que responde preguntas sobre documentos cargados (PDF, DOCX, TXT, MD, CSV). Permite subir múltiples archivos, procesarlos y realizar consultas con respuestas contextuales, resaltando la información relevante directamente en el texto.
+Permite subir múltiples archivos, procesarlos y realizar consultas con respuestas contextuales, mostrando la información relevante directamente desde el texto.
 
 ## ✨ Características principales
 
-📑 Soporte para múltiples formatos: PDF, DOCX, TXT, Markdown (.md) y CSV.
+📑 Soporte ampliado para múltiples formatos: PDF, DOCX, TXT, Markdown (.md), CSV, PowerPoint (.pptx) y OpenDocument (.odt).
 
 📂 Carga de múltiples documentos en una sola sesión.
 
-🧹 Limpieza y fragmentación automática del texto con solapamiento para mejorar contexto.
+🧹 Limpieza y fragmentación automática del texto con solapamiento para preservar el contexto.
 
-🧠 Embeddings semánticos con SentenceTransformers (all-MiniLM-L6-v2).
+🧠 Incrustaciones semánticas avanzadas con SentenceTransformers (all-mpnet-base-v2).
 
-⚡ Búsqueda rápida y precisa con FAISS.
+⚡ Búsqueda vectorial eficiente y precisa con FAISS.
 
-🎯 Respuestas contextuales con modelo DistilBERT QA de Hugging Face.
+🎯 Respuestas contextuales mejoradas con el modelo QA deepset/roberta-base-squad2 de Hugging Face.
 
-🔍 Resaltado automático de la parte del documento usada para responder.
+💬 Interfaz tipo chat con historial de conversación completo.
 
-💬 Interfaz de chat con historial, que guarda la conversación completa.
+🌐 Interfaz web accesible creada con Gradio.
 
-🌐 Interfaz web accesible con Gradio.
+🔍 Análisis contextual mejorado: combina fragmentos relevantes de varios documentos para dar respuestas más completas.
 
 ## 🛠️ Tecnologías usadas
 
 Python 3.x
 
-Gradio (interfaz de usuario)
+Gradio → Interfaz de usuario web.
 
-SentenceTransformers (embeddings semánticos)
+SentenceTransformers → Embeddings semánticos (all-mpnet-base-v2).
 
-FAISS (búsqueda vectorial eficiente)
+Transformers (Hugging Face) → Modelo de preguntas y respuestas (roberta-base-squad2).
 
-Transformers (Hugging Face) para Question Answering
+FAISS → Búsqueda vectorial rápida.
 
-PyPDF2 para extracción de texto en PDF
+PyPDF2 → Lectura de PDFs.
 
-python-docx para extracción de texto en DOCX
+python-docx → Lectura de archivos DOCX.
+
+python-pptx → Lectura de presentaciones PPTX.
+
+odfpy → Lectura de documentos ODT.
+
+NumPy → Cálculo numérico.
 
 ## 🚀 Uso
 
@@ -52,12 +59,22 @@ python app.py
 
 Abre la interfaz web de Gradio en tu navegador.
 
-Sube tus documentos (PDF, DOCX, TXT, MD o CSV) y comienza a hacer preguntas.
+Sube tus documentos (PDF, DOCX, TXT, MD, CSV, PPTX, ODT) y comienza a hacer preguntas.
 
 ## 🎯 Ideal para
 
-Empresas que quieren consultar documentos internos de manera centralizada.
+🏢 Empresas que quieren consultar documentos internos de forma rápida y segura.
 
-Investigadores y estudiantes que trabajan con múltiples documentos y necesitan encontrar información puntual.
+📚 Investigadores y estudiantes que necesitan extraer información puntual de múltiples fuentes.
 
-Proyectos empresariales que requieren un asistente inteligente y privado para documentos sensibles.
+🧠 Proyectos empresariales que requieren un asistente inteligente para manejar documentación sensible.
+
+## 💡 Notas
+Se recomienda usar documentos con texto digital (no escaneados como imagen).
+
+El rendimiento puede variar según el tamaño y tipo de los documentos cargados.
+
+Admite consultas semánticas, no solo coincidencias literales.
+
+## 📄 Licencia
+Este proyecto está bajo la licencia MIT.
