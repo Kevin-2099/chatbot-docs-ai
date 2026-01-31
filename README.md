@@ -77,4 +77,15 @@ El rendimiento puede variar según el tamaño y tipo de los documentos cargados.
 Admite consultas semánticas, no solo coincidencias literales.
 
 ## 📄 Licencia
-Este proyecto está bajo la licencia MIT.
+Este proyecto se distribuye bajo una **licencia propietaria con acceso al código (source-available)**.
+
+El código fuente se pone a disposición únicamente para fines de **visualización, evaluación y aprendizaje**.
+
+❌ No está permitido copiar, modificar, redistribuir, sublicenciar, ni crear obras derivadas del software o de su código fuente sin autorización escrita expresa del titular de los derechos.
+
+❌ El uso comercial del software, incluyendo su oferta como servicio (SaaS), su integración en productos comerciales o su uso en entornos de producción, requiere un **acuerdo de licencia comercial independiente**.
+
+📌 El texto **legalmente vinculante** de la licencia es la versión en inglés incluida en el archivo `LICENSE`. 
+
+Se proporciona una traducción al español en `LICENSE_ES.md` únicamente con fines informativos. En caso de discrepancia, prevalece la versión en inglés.
+
