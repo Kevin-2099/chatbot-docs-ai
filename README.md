@@ -1,49 +1,51 @@
 # Chatbot de Documentos Empresariales con IA 🤖📂
 Asistente inteligente basado en IA que responde preguntas sobre documentos cargados (PDF, DOCX, TXT, MD, CSV, PPTX, ODT).
 
-Permite subir múltiples archivos, procesarlos y realizar consultas con respuestas contextuales, mostrando la información relevante directamente desde el texto.
+Permite subir múltiples archivos, procesarlos de manera semántica y realizar consultas con respuestas contextuales, mostrando información relevante directamente desde los textos, con historial, búsqueda y exportación.
 
 ## ✨ Características principales
 
-📑 Soporte ampliado para múltiples formatos: PDF, DOCX, TXT, Markdown (.md), CSV, PowerPoint (.pptx) y OpenDocument (.odt).
+- 📑 Soporte completo de formatos: PDF, DOCX, TXT, Markdown (.md), CSV, PowerPoint (.pptx) y OpenDocument (.odt).
 
-📂 Carga de múltiples documentos en una sola sesión.
+- 📂 Carga múltiple de documentos en una sola sesión.
 
-🧹 Limpieza y fragmentación automática del texto con solapamiento para preservar el contexto.
+- 🧹 Fragmentación semántica de textos para preservar contexto y mejorar la calidad de las respuestas.
 
-🧠 Incrustaciones semánticas avanzadas con SentenceTransformers (all-mpnet-base-v2).
+- 🧠 Incrustaciones semánticas avanzadas con SentenceTransformers (all-mpnet-base-v2).
 
-⚡ Búsqueda vectorial eficiente y precisa con FAISS.
+- ⚡ Búsqueda vectorial eficiente con FAISS, optimizada con caché para consultas rápidas.
 
-🎯 Respuestas contextuales mejoradas con el modelo QA deepset/roberta-base-squad2 de Hugging Face.
+- 🎯 Respuestas contextuales robustas usando el modelo QA deepset/roberta-base-squad2.
 
-💬 Interfaz tipo chat con historial de conversación completo.
+- 💬 Interfaz tipo chat con historial completo, incluyendo timestamps y exportación en JSON o Markdown.
 
-🌐 Interfaz web accesible creada con Gradio.
+- 🔍 Búsqueda en historial por palabras clave para encontrar conversaciones pasadas rápidamente.
 
-🔍 Análisis contextual mejorado: combina fragmentos relevantes de varios documentos para dar respuestas más completas.
+- 🌐 Interfaz web accesible desarrollada con Gradio, dividida en secciones para preguntas, historial y exportación.
 
 ## 🛠️ Tecnologías usadas
 
-Python 3.x
+- Python 3.x
 
-Gradio → Interfaz de usuario web.
+- Gradio → Interfaz web interactiva
 
-SentenceTransformers → Embeddings semánticos (all-mpnet-base-v2).
+- SentenceTransformers → Embeddings semánticos (all-mpnet-base-v2)
 
-Transformers (Hugging Face) → Modelo de preguntas y respuestas (roberta-base-squad2).
+- Transformers (Hugging Face) → Modelo de QA (roberta-base-squad2)
 
-FAISS → Búsqueda vectorial rápida.
+- FAISS → Búsqueda vectorial rápida
 
-PyPDF2 → Lectura de PDFs.
+- PyPDF2 → Lectura de PDFs
 
-python-docx → Lectura de archivos DOCX.
+- python-docx → Lectura de DOCX
 
-python-pptx → Lectura de presentaciones PPTX.
+- python-pptx → Lectura de PPTX
 
-odfpy → Lectura de documentos ODT.
+- odfpy → Lectura de ODT
 
-NumPy → Cálculo numérico.
+- NLTK → Tokenización semántica de oraciones
+
+- NumPy → Cálculo numérico
 
 ## 🚀 Uso
 
@@ -63,18 +65,18 @@ Sube tus documentos (PDF, DOCX, TXT, MD, CSV, PPTX, ODT) y comienza a hacer preg
 
 ## 🎯 Ideal para
 
-🏢 Empresas que quieren consultar documentos internos de forma rápida y segura.
+- 🏢 Empresas que quieren consultar documentos internos de forma rápida y segura.
 
-📚 Investigadores y estudiantes que necesitan extraer información puntual de múltiples fuentes.
+- 📚 Investigadores y estudiantes que necesitan extraer información puntual de múltiples fuentes.
 
-🧠 Proyectos empresariales que requieren un asistente inteligente para manejar documentación sensible.
+- 🧠 Proyectos empresariales que requieren un asistente inteligente para manejar documentación sensible con historial y búsquedas.
 
 ## 💡 Notas
-Se recomienda usar documentos con texto digital (no escaneados como imagen).
+- Se recomienda usar documentos con texto digital (no escaneados como imagen).
 
-El rendimiento puede variar según el tamaño y tipo de los documentos cargados.
+- El rendimiento puede variar según el tamaño y tipo de los documentos cargados.
 
-Admite consultas semánticas, no solo coincidencias literales.
+- Las consultas son semánticas, no solo coincidencias literales.
 
 ## 📄 Licencia
 Este proyecto se distribuye bajo una **licencia propietaria con acceso al código (source-available)**.
