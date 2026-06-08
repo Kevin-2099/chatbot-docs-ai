@@ -10,3 +10,11 @@ python-pptx>=0.6.21
 nltk>=3.8.1
 odfpy>=1.4.1
 markdown>=3.4.3
+pandas
+accelerate
+rank-bm25
+openpyxl
+beautifulsoup4
+lxml
+matplotlib
+langdetect
